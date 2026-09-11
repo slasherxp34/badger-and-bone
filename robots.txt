@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /badger-and-bone/cart/
+Disallow: /badger-and-bone/thank-you/
+Disallow: /badger-and-bone/links/
+Sitemap: https://slasherxp34.github.io/badger-and-bone/sitemap.xml

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Badger &amp; Bone — Links</title>
+<meta name="description" content="Gifts and goods for long dogs. Printed in the USA. Los Angeles.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://badger-and-bone.pages.dev/links/">
+<meta property="og:title" content="Badger &amp; Bone — Links">
+<meta property="og:description" content="Gifts and goods for long dogs. Printed in the USA.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://badger-and-bone.pages.dev/links/">
+<!--
+  BADGER & BONE — link-in-bio page
+  ================================
+  Self-contained: inline CSS, no JS, no external requests, no webfonts. The logo
+  mark is inline SVG so the page renders identically offline and cannot break on
+  a blocked CDN. Works opened straight off disk (file://) or hosted anywhere.
+
+  HOSTING
+  -------
+  Intended to live on the SAME Cloudflare Pages site as the store, at /links/:
+      https://badger-and-bone.pages.dev/links/
+  The store build can simply copy this file:
+      cp 06-ops/social-kit/link-in-bio.html 03-store/dist/links/index.html
+  No build step, no dependencies. Because it is one static file with no imports,
+  it also works standalone from any other host or straight from the filesystem.
+
+  UTM PLACEHOLDERS
+  ----------------
+  Every href carries `?utm_source=bio&utm_medium=bio`.
+  Replace the literal token `bio` before publishing — one copy of this
+  file per platform, or a one-line sed at build time:
+      sed 's/bio/tiktok/g' link-in-bio.html > dist/links/tiktok.html
+  Valid utm_source values (per POSTING_PLAN.md §6):
+      tiktok | youtube | instagram | pinterest | x | facebook
+  utm_medium is always `bio` on this page — that is what identifies profile-link
+  traffic. Pinterest pins carry their own destination URLs with utm_medium=pin
+  and should NOT be routed through this page.
+  Optional: append &utm_campaign={product_slug}_202609 when pushing one product.
+
+  NOTE ON STRATEGY
+  ----------------
+  POSTING_PLAN.md prefers the bio link point DIRECTLY at a PDP (an intermediate
+  page costs 20-40% of clicks) and says to add an aggregator page only once three
+  or more SKUs are pushed at once. This page is that aggregator — hold it until
+  that condition is met, or use it on platforms that allow only one URL while
+  several products are live. The default single-link bio target is now:
+  /p/tree-trim-set/          (the hero bundle, $69 — from the first week of November)
+  /p/name-drop-ornament/     (the year-round default, $29)
+
+  Memorial products are deliberately NOT linked from this page. They are never
+  merchandised beside gifts. See PROFILE_COPY.md section 5.
+-->
+<style>
+  /* Palette single-sourced from 03-store/brand/tokens.json */
+  :root{
+    --oat:#F4EDE1; --oat-deep:#E7DBC7; --paper:#FBF7F0;
+    --ochre:#C8891B; --ochre-deep:#A06D12;
+    --loam:#2E2A26; --loam-soft:#5A5049;
+    --radius-card:14px; --radius-pill:999px;
+    /* Syne/Inter are the brand faces; no webfont is loaded so the page stays
+       self-contained. The fallback stack is geometric, so a font failure
+       degrades in character rather than into Times (BRAND.md §4). */
+    --font-h:'Syne','Avenir Next',Futura,'Trebuchet MS','Helvetica Neue',Arial,sans-serif;
+    --font-b:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--oat); color:var(--loam);
+    font-family:var(--font-b); font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    /* mobile-first: comfortable side gutters, content centred on wide screens */
+    padding:40px 20px 56px;
+    display:flex; justify-content:center;
+  }
+  .wrap{width:100%; max-width:420px}
+  header{text-align:center; margin-bottom:32px}
+  .mark{width:88px; height:88px; margin:0 auto 18px; display:block}
+  h1{
+    font-family:var(--font-h); font-weight:800; font-size:31px; line-height:1.06;
+    letter-spacing:-0.022em; margin:0 0 10px;
+  }
+  /* Ochre is a fill/large-bold color only — never body text (§3.2). */
+  .amp{color:var(--ochre)}
+  .tagline{
+    font-family:var(--font-h); font-weight:700; font-size:18px;
+    letter-spacing:-0.012em; margin:0 0 8px; color:var(--loam);
+  }
+  .bio{margin:0; font-size:15px; color:var(--loam-soft)}
+  nav{display:flex; flex-direction:column; gap:12px; margin:0 0 28px}
+  a.btn{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:17px 20px; border-radius:var(--radius-pill);
+    font-size:16px; font-weight:600; text-decoration:none;
+    border:2px solid var(--loam); background:var(--paper); color:var(--loam);
+    transition:background 200ms cubic-bezier(.2,0,.3,1), color 200ms cubic-bezier(.2,0,.3,1);
+  }
+  /* One primary action carries the accent; the rest are outlined (§3.1). */
+  a.btn.primary{background:var(--ochre); border-color:var(--ochre); color:var(--paper)}
+  a.btn .arrow{font-weight:400; opacity:.75; flex:none}
+  a.btn:hover{background:var(--loam); border-color:var(--loam); color:var(--oat)}
+  a.btn.primary:hover{background:var(--ochre-deep); border-color:var(--ochre-deep); color:var(--paper)}
+  a.btn:focus-visible{outline:none; box-shadow:0 0 0 3px rgba(200,137,27,.42)}
+  .coats{
+    display:flex; justify-content:center; gap:7px; align-items:flex-end;
+    margin:0 0 22px; padding:0; list-style:none;
+  }
+  .coats li{width:30px; height:12px; border-radius:6px}
+  footer{text-align:center; border-top:1px solid var(--oat-deep); padding-top:20px}
+  .meta{
+    font-size:12px; text-transform:uppercase; letter-spacing:.22em;
+    color:var(--loam-soft); margin:0 0 6px;
+  }
+  .fine{font-size:13px; color:var(--loam-soft); margin:0}
+  .fine a{color:var(--loam); text-decoration:underline; text-underline-offset:2px}
+  @media (prefers-reduced-motion:reduce){a.btn{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <!-- logo mark, inline: long dog standing on a bone. Loam dog, ochre bone. -->
+    <svg class="mark" viewBox="0 0 120 120" role="img" aria-label="Badger &amp; Bone">
+      <path d="M8 45C3 44 3 38 9 36C17 33 28 33 36 37C37 29 44 24 52 24C61 24 67 31 66 40C66 46 63 51 58 54C70 58 84 61 95 62C99 55 102 46 102 38C102 32 109 32 109 39C109 48 106 57 102 64C105 67 106 71 103 75C98 80 84 81 70 80C56 79 40 79 31 78C22 77 17 73 16 67C15 60 19 54 26 51C19 49 12 47 8 45Z" fill="#2E2A26"/>
+      <path d="M56 30C65 30 69 40 68 52C67 64 61 70 54 68C49 66 48 57 49 47C50 37 52 30 56 30Z" fill="#2E2A26"/>
+      <circle cx="38" cy="40" r="3.6" fill="#F4EDE1"/>
+      <circle cx="8" cy="41" r="4.6" fill="#2E2A26"/>
+      <rect x="27" y="75" width="13" height="17" rx="6.5" fill="#2E2A26"/>
+      <rect x="73" y="75" width="13" height="17" rx="6.5" fill="#2E2A26"/>
+      <circle cx="16" cy="97" r="9.5" fill="#C8891B"/>
+      <circle cx="16" cy="110" r="9.5" fill="#C8891B"/>
+      <circle cx="104" cy="97" r="9.5" fill="#C8891B"/>
+      <circle cx="104" cy="110" r="9.5" fill="#C8891B"/>
+      <rect x="13" y="96" width="94" height="15" rx="7.5" fill="#C8891B"/>
+    </svg>
+    <h1>BADGER <span class="amp">&amp;</span> BONE</h1>
+    <p class="tagline">Built for the long dog.</p>
+    <p class="bio">Gifts + goods for long dogs. Printed in the USA.</p>
+  </header>
+
+  <!-- the six coats, as a quiet swatch row -->
+  <ul class="coats" aria-label="Six coat colorways">
+    <li style="background:#B2653A" title="Red"></li>
+    <li style="background:#2A2724" title="Black &amp; Tan"></li>
+    <li style="background:#5C3A28" title="Chocolate &amp; Tan"></li>
+    <li style="background:#E4CFA8" title="English Cream"></li>
+    <li style="background:#6E6A64" title="Dapple"></li>
+    <li style="background:#8A7A63" title="Wirehaired"></li>
+  </ul>
+
+  <nav aria-label="Links">
+    <a class="btn primary" href="/badger-and-bone/p/tree-trim-set/?utm_source=bio&amp;utm_medium=bio">
+      <span>Shop the Tree Trim Set</span><span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+    <a class="btn" href="/badger-and-bone/p/name-drop-ornament/?utm_source=bio&amp;utm_medium=bio">
+      <span>Put their name on it</span><span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+    <a class="btn" href="/badger-and-bone/p/new-doxie-starter-set/?utm_source=bio&amp;utm_medium=bio">
+      <span>The Long Dog Gift Box</span><span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+    <a class="btn" href="/badger-and-bone/blog/dachshund-coat-guide/?utm_source=bio&amp;utm_medium=bio">
+      <span>Find your coat</span><span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+    <a class="btn" href="/badger-and-bone/collections/all/?utm_source=bio&amp;utm_medium=bio">
+      <span>All products</span><span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+    <a class="btn" href="/badger-and-bone/track/?utm_source=bio&amp;utm_medium=bio">
+      <span>Track an order</span><span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </nav>
+
+  <footer>
+    <p class="meta">Los Angeles</p>
+    <p class="fine">
+      Original drawings from our own six-coat system, never licensed stock. Printed in the
+      USA and shipped in 5–11 business days.<br>
+      <a href="mailto:hello@badgerandbone.com">hello@badgerandbone.com</a>
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>

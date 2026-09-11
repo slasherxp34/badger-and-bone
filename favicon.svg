@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="64" height="64" role="img" aria-label="Badger &amp; Bone mark">
+  <rect width="120" height="120" rx="24" fill="#2E2A26"/>
+  <g>
+    <!-- THE DOG: one continuous silhouette, nose-to-tail, slim deep-keel torso ~3:1 -->
+    <path d="M8 45
+      C 3 44 3 38 9 36
+      C 17 33 28 33 36 37
+      C 37 29 44 24 52 24
+      C 61 24 67 31 66 40
+      C 66 46 63 51 58 54
+      C 70 58 84 61 95 62
+      C 99 55 102 46 102 38
+      C 102 32 109 32 109 39
+      C 109 48 106 57 102 64
+      C 105 67 106 71 103 75
+      C 98 80 84 81 70 80
+      C 56 79 40 79 31 78
+      C 22 77 17 73 16 67
+      C 15 60 19 54 26 51
+      C 19 49 12 47 8 45 Z" fill="#F4EDE1"/>
+    <!-- floppy ear: solid lobe reading against the skull by overlap silhouette only -->
+    <path d="M56 30 C 65 30 69 40 68 52 C 67 64 61 70 54 68 C 49 66 48 57 49 47 C 50 37 52 30 56 30 Z" fill="#F4EDE1"/>
+    <!-- eye: punched out, sits forward of the ear so it never fills in -->
+    <circle cx="38" cy="40" r="3.6" fill="#2E2A26"/>
+    <!-- nose -->
+    <circle cx="8" cy="41" r="4.6" fill="#F4EDE1"/>
+    <!-- legs dropping to the bone -->
+    <rect x="27" y="75" width="13" height="17" rx="6.5" fill="#F4EDE1"/>
+    <rect x="73" y="75" width="13" height="17" rx="6.5" fill="#F4EDE1"/>
+    <!-- THE BONE: baseline rule the dog stands on. Accent, fully clear of the dog. -->
+    <circle cx="16" cy="97" r="9.5" fill="#C8891B"/>
+    <circle cx="16" cy="110" r="9.5" fill="#C8891B"/>
+    <circle cx="104" cy="97" r="9.5" fill="#C8891B"/>
+    <circle cx="104" cy="110" r="9.5" fill="#C8891B"/>
+    <rect x="13" y="96" width="94" height="15" rx="7.5" fill="#C8891B"/>
+  </g>
+</svg>

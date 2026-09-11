@@ -1,0 +1,30 @@
+{
+  "name": "Badger & Bone",
+  "short_name": "Badger & Bone",
+  "description": "Built for the long dog.",
+  "start_url": "/badger-and-bone/",
+  "scope": "/badger-and-bone/",
+  "display": "standalone",
+  "background_color": "#F4EDE1",
+  "theme_color": "#C8891B",
+  "icons": [
+    {
+      "src": "/badger-and-bone/assets/brand/logo/logo-mark-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/badger-and-bone/assets/brand/logo/logo-mark-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/badger-and-bone/assets/brand/logo/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
